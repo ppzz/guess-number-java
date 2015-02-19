@@ -15,6 +15,6 @@ public class CompareNumber {
                 bCount++;
             }
         }
-        return aCount+"A"+(bCount-aCount)+"B";
+        return aCount + "A" + (bCount - aCount) + "B";
     }
 }

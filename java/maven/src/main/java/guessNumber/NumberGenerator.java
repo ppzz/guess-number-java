@@ -10,12 +10,12 @@ public class NumberGenerator {
     public String generate() {
         Random ran = new Random();
         String numbers = "";
-        while(numbers.length()<4){
+        while (numbers.length() < 4) {
             String temp = String.valueOf(ran.nextInt(10));
-            if(!numbers.contains(temp)){
-                numbers+=temp;
+            if (!numbers.contains(temp)) {
+                numbers += temp;
             }
         }
-        return  numbers;
+        return numbers;
     }
 }
