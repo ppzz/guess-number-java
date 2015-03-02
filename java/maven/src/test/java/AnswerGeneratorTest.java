@@ -1,3 +1,4 @@
+import guessNumber.AnswerGenerator;
 import org.junit.Test;
 
 import java.util.HashSet;
@@ -14,7 +15,7 @@ import static org.mockito.Mockito.mock;
  */
 public class AnswerGeneratorTest {
     @Test
-    public void should_return_four_digits_string(){
+    public void should_return_four_digits_string() {
         String result = new AnswerGenerator(new Random()).generate();
 
         assertThat(result.length()).isEqualTo(4);

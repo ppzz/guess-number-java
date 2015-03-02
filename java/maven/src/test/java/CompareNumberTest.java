@@ -15,7 +15,7 @@ public class CompareNumberTest {
 
         //when
         CompareNumber compareNumber = new CompareNumber();
-        String result = compareNumber.getTips(input,answer);
+        String result = compareNumber.getTips(input, answer);
 
         //then
         assertThat(result).isEqualTo("4A0B");
@@ -44,7 +44,7 @@ public class CompareNumberTest {
     }
 
     @Test
-    public void should_return_0A4B_when_get_tips_given_inpout_is_1432_and_answer_is_1234(){
+    public void should_return_0A4B_when_get_tips_given_inpout_is_1432_and_answer_is_1234() {
         String input = "1456";
         String answer = "1234";
 
