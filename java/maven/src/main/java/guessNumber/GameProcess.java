@@ -12,6 +12,7 @@ public class GameProcess {
     private final BufferedReader reader;
     private final AnswerGenerator answerGenerator;
     private final CompareNumber compareNumber;
+    private int chances = 6;
 
     public GameProcess(PrintStream out, BufferedReader reader, AnswerGenerator answerGenerator, CompareNumber compareNumber) {
         this.out = out;
@@ -22,14 +23,27 @@ public class GameProcess {
 
     public void start() throws IOException {
         out.println("welcome!");
-        out.println("please input your number(6):");
+        out.println("please input your number(" + chances + "):");
+        System.out.println("-" + chances);
+        chances -= 1;
         String answer = answerGenerator.generate();
         String input = reader.readLine();
         String tips = compareNumber.getTips(input, answer);
 
-        out.println(tips);
-        if (!(tips.equals("4A0B"))){
-            out.println("please input your number(5):");
+        while (chances > 0) {
+            out.println(tips);
+            if (!(tips.equals("4A0B"))) {
+                out.println("please input your number(" + chances + "):");
+                System.out.println("-" + chances);
+                chances -= 1;
+            }
+            input = reader.readLine();
+            tips = compareNumber.getTips(input, answer);
         }
+        out.println(tips);
+        if (!(tips.equals("4A0B"))) {
+            out.println("game over");
+        }
+
     }
 }
