@@ -57,12 +57,11 @@ public class AnswerGeneratorTest {
         result.add(answerGenerator.generate());
         result.add(answerGenerator.generate());
 
-        System.out.println(result.toString());
         assertThat(result.size()).isEqualTo(3);
     }
 
     @Test
-    public void should_repeatable_outof_three_times() {
+    public void should_repeatable_out_of_three_times() {
         Random random = mock(Random.class);
         given(random.nextInt(10))
                 .willReturn(1, 2, 3, 4)
@@ -76,7 +75,6 @@ public class AnswerGeneratorTest {
         result.add(answerGenerator.generate());
         result.add(answerGenerator.generate());
 
-        System.out.println(result.toString());
         assertThat(result.size()).isEqualTo(3);
     }
 }
