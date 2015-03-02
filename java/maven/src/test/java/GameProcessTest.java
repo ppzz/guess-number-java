@@ -92,6 +92,7 @@ public class GameProcessTest {
         game.start();
         inOrder.verify(out).println("welcome!");
         inOrder.verify(out).println("please input your number(6):");
+        inOrder.verify(out,never()).println("4A0B");
         inOrder.verify(out).println("congratulate!");
 
     }
